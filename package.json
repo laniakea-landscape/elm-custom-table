@@ -1,0 +1,16 @@
+{
+  "name": "elm-custom-table",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "elm-live": "^4.0.2"
+  },
+  "scripts": {
+    "watch": "rm -rf ./elm-stuff && elm-live src/Main.elm",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
