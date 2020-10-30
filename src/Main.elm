@@ -6,7 +6,9 @@ import Json.Decode as JD
 import Json.Encode as JE
 import Debug
 
-import CustomTable as CT
+import Table as T
+import TableConfig as TC
+import ColumnConfig as CC
 
 
 main : Program () Model Msg
@@ -74,12 +76,12 @@ subscriptions _ =
 view : Model -> Html Msg
 view model =
     div []
-        [ CT.view 
-            [ CT.Caption (Maybe.Just "Test Custom Table")
-            , CT.Columns 
-                [ CT.Column [ CT.Title "ID",  CT.CellPath "login.uuid" ] 
-                , CT.Column [ CT.CellView (\_ _ -> [ a [ href "https://ya.ru" ] [ text "Yandex !" ] ]) ]
-                , CT.Column [ CT.CellPath "location.street.name", CT.CellPath "location.street.number" ]
+        [ T.view 
+            [ TC.Caption (Maybe.Just "Test Custom Table")
+            , TC.Columns 
+                [ CC.Column [ CC.Title "ID",  CC.CellPath "login.uuid" ] 
+                , CC.Column [ CC.CellView (\_ _ _ _ _ _ -> [ a [ href "https://ya.ru" ] [ text "Yandex !" ] ]) ]
+                , CC.Column [ CC.CellPath "location.street.name", CC.CellPath "location.street.number" ]
                 ]
             ] 
             model.data 
