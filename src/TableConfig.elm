@@ -28,6 +28,7 @@ defaultConfig =
 adjustConfig : List (Property msg model) -> Config msg model
 adjustConfig = adjustConfig_ defaultConfig
 
+
 adjustConfig_ : Config msg model -> List (Property msg model) -> Config msg model 
 adjustConfig_ acc props =
     case props of
